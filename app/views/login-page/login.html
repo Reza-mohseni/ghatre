@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Login & Signup Form</title>
-  <link rel="stylesheet" href="./style/style.css">
+  <title>ورود/ثبت نام</title>
+  <link rel="stylesheet" href="../assets/css/login-style.css">
+
 </head>
 <body>
+<!-- partial:index.partial.html -->
 <div class="wrapper">
   <div class="title-text">
     <div class="title login">ورود</div>
@@ -20,12 +22,12 @@
       <div class="slider-tab"></div>
     </div>
     <div class="form-inner">
-      <form action="/user/login" method="POST" class="login">
+      <form action="#" class="login margin">
         <div class="field">
-          <input type="text" name="email" placeholder="ایمیل" required>
+          <input type="text" placeholder="ایمیل" required>
         </div>
         <div class="field">
-          <input type="password" name="password" placeholder="گذرواژه" required>
+          <input type="password" placeholder="گذرواژه" required>
         </div>
         <div class="field btn">
           <div class="btn-layer"></div>
@@ -33,15 +35,24 @@
         </div>
         <div class="signup-link">حسابی ندارید؟<a href="#">ثبت نام کنید</a></div>
       </form>
-      <form action="/user/register" method="POST" class="signup">
+      <form action="#" class="signup">
         <div class="field">
-          <input type="text" name="email" placeholder="ایمیل" required>
+          <input type="text" placeholder="نام" required>
         </div>
         <div class="field">
-          <input type="password" name="password" placeholder="گذرواژه" required>
+          <input type="text" placeholder="نام خانواگی" required>
         </div>
         <div class="field">
-          <input type="password" name="confirm_password" placeholder="تکرار گذرواژه" required>
+          <input type="number" placeholder="شماره تلفن" required>
+        </div>
+        <div class="field">
+          <input type="email" placeholder="ایمیل" required>
+        </div>
+        <div class="field">
+          <input type="password" placeholder="گذرواژه" required>
+        </div>
+        <div class="field">
+          <input type="password" placeholder="تکرار گذرواژه" required>
         </div>
         <div class="field btn">
           <div class="btn-layer"></div>
@@ -51,6 +62,8 @@
     </div>
   </div>
 </div>
-<script src="./script/script.js"></script>
+<!-- partial -->
+  <script  src="../assets/js/login-script.js"></script>
+
 </body>
 </html>
