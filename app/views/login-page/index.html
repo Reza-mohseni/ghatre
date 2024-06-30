@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login & Signup Form</title>
+  <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+<div class="wrapper">
+  <div class="title-text">
+    <div class="title login">ورود</div>
+    <div class="title signup">ثبت نام</div>
+  </div>
+  <div class="form-container">
+    <div class="slide-controls">
+      <input type="radio" name="slide" id="login" checked>
+      <input type="radio" name="slide" id="signup">
+      <label for="login" class="slide login">ورود</label>
+      <label for="signup" class="slide signup">ثبت نام</label>
+      <div class="slider-tab"></div>
+    </div>
+    <div class="form-inner">
+      <form action="/user/login" method="POST" class="login">
+        <div class="field">
+          <input type="text" name="email" placeholder="ایمیل" required>
+        </div>
+        <div class="field">
+          <input type="password" name="password" placeholder="گذرواژه" required>
+        </div>
+        <div class="field btn">
+          <div class="btn-layer"></div>
+          <input type="submit" value="ورود">
+        </div>
+        <div class="signup-link">حسابی ندارید؟<a href="#">ثبت نام کنید</a></div>
+      </form>
+      <form action="/user/register" method="POST" class="signup">
+        <div class="field">
+          <input type="text" name="email" placeholder="ایمیل" required>
+        </div>
+        <div class="field">
+          <input type="password" name="password" placeholder="گذرواژه" required>
+        </div>
+        <div class="field">
+          <input type="password" name="confirm_password" placeholder="تکرار گذرواژه" required>
+        </div>
+        <div class="field btn">
+          <div class="btn-layer"></div>
+          <input type="submit" value="ثبت نام">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="./script/script.js"></script>
+</body>
+</html>
