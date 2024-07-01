@@ -1,18 +1,18 @@
 @font-face {
   font-family: vazir;
-  src: url(../font/Vazir-Thin.woff2)format(woff2);
+  src: url(../../font/Vazir-Thin.woff2)format(woff2);
 }
 @font-face {
   font-family:yekan ;
-  src: url(../font/Yekan.woff2)format(woff2);
+  src: url(../../font/Yekan.woff2)format(woff2);
 }
 @font-face {
   font-family:iransans ;
-  src: url(../font/IRANSansWeb_Medium.woff2)format(woff2);
+  src: url(../../font/IRANSansWeb_Medium.woff2)format(woff2);
 }
 @font-face {
   font-family:Bnazanin ;
-  src: url(../font/BNazanin.woff2)format(woff2);
+  src: url(../../font/BNazanin.woff2)format(woff2);
 }
 *{
   font-family: iransans;
@@ -210,4 +210,24 @@ form .btn input[type="submit"] {
 }
 .margin {
   margin-top: 40px;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+.password-container {
+  position: relative;
+}
+#togglePassword1,#togglePassword2,#togglePassword3 {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  transform: translateY(-50%);
 }

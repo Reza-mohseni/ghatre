@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>ورود/ثبت نام</title>
-  <link rel="stylesheet" href="../assets/css/login-style.css">
+  <link rel="stylesheet" href="../assets/Login&SinUp/css/login-style.css">
   <!-- کتابخانه SweetAlert را در فایل HTML خود اضافه کنید -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
@@ -26,8 +27,9 @@
         <div class="field">
           <input type="text" name="UserName" placeholder="ایمیل یا تلفن" required>
         </div>
-        <div class="field">
-          <input type="password" name="Password" placeholder="گذرواژه" required>
+        <div class="field password-container">
+          <input type="password" name="Password" placeholder="گذرواژه" required id="password1">
+          <i id="togglePassword1" class="bi bi-eye"></i>
         </div>
         <div class="field btn">
           <div class="btn-layer"></div>
@@ -37,22 +39,24 @@
       </form>
       <form id="registerForm" method="post" class="signup">
         <div class="field">
-          <input type="text" name="Name" placeholder="نام" required value="ابوالفضل">
+          <input type="text" name="Name" placeholder="نام" required >
         </div>
         <div class="field">
-          <input type="text" name="LastName" placeholder="نام خانوادگی" required value="محسنی">
+          <input type="text" name="LastName" placeholder="نام خانوادگی" required >
         </div>
         <div class="field">
-          <input type="number" name="NumberPhone" placeholder="شماره تلفن" required value="09940564287">
+          <input type="number" name="NumberPhone" placeholder="شماره تلفن" required value="09">
         </div>
         <div class="field">
-          <input type="email" name="Email" placeholder="ایمیل" required value="abolfazlmohseni605@gmail.com">
+          <input type="email" name="Email" placeholder="ایمیل" required >
         </div>
-        <div class="field">
-          <input type="password" name="Password" placeholder="گذرواژه" required value="12345678">
+        <div class="field password-container">
+          <input type="password" name="Password" placeholder="گذرواژه" required  id="password2">
+          <i id="togglePassword2" class="bi bi-eye"></i>
         </div>
-        <div class="field">
-          <input type="password" name="ConfirmPassword" placeholder="تکرار گذرواژه" required value="12345678">
+        <div class="field password-container">
+          <input type="password" name="ConfirmPassword" placeholder="تکرار گذرواژه" required id="password3">
+          <i id="togglePassword3" class="bi bi-eye"></i>
         </div>
         <div class="field btn">
           <div class="btn-layer"></div>
