@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cb76e02-6fda-475f-ae2c-34c194904bd3" name="Changes" comment="" />
+    <list default="true" id="0cb76e02-6fda-475f-ae2c-34c194904bd3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Models/User/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/Arduino/SoilMoisture.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/user/GET_NewUser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/user/LoginUser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ORM/BaseModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ORM/BaseModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ORM/Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ORM/Connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/assets/js/login-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/assets/Login&amp;SinUp/js/login-script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/login-page/login.html" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,25 +55,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/ghatre/public&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/xampp/htdocs/ghatre/public",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ghatre\public" />
       <recent name="C:\xampp\htdocs\ghatre\vendor" />
       <recent name="C:\xampp\htdocs\ghatre\config" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ghatre\app\views\assets\Login&amp;SinUp\js" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -75,6 +91,8 @@
       <workItem from="1719648645299" duration="6785000" />
       <workItem from="1719674762602" duration="10064000" />
       <workItem from="1719716493287" duration="3070000" />
+      <workItem from="1719739071681" duration="7328000" />
+      <workItem from="1719754593308" duration="28092000" />
     </task>
     <servers />
   </component>
