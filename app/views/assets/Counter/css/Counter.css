@@ -130,7 +130,7 @@ body{
 /* نمودار */
 .chart-box {
     height: 700px;
-    width: 90%;
+    width: 89.5%;
     margin-left: 1.1%;
     margin-right: 2%;
     float: left;
@@ -397,7 +397,15 @@ table {
         margin-right: auto;
     }
 }
-
+@media screen and (max-width:910px) {
+    .menu{
+        width: 10%;
+    }
+    .topbar,.chart-box,
+    .tabel-box,.conteyner-box{
+        width: 84%;
+    }
+}
 @media screen and (max-width:768px) {
     * {
         font-size: 14px;
