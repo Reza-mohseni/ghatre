@@ -1,6 +1,12 @@
 <?php
-$row1 = $_GET[''];
-$row2 = $_GET[''];
-$row3 = $_GET[''];
+namespace App\controllers\temperature;
 
+require_once '../../Models/temperature/temperature.php';
+use App\Models\temperature;
+
+$temperatureC=$_POST['temperatureC'];
+$temperatureF=$_POST['temperatureF'];
+$dd=new temperature\temperature();
+//$temperature=new temperature;
+$dd->createtemperature($temperatureC,$temperatureF);
 

@@ -4,12 +4,15 @@ namespace App\Models\ORM;
 use App\Models\ORM\Connection;
 require_once __DIR__ . '/../ORM/Connection.php';
 
+
 class BaseModel extends Connection{
+
     protected $table;
     protected $connection;
 
     public function __construct() {
         $this->connection = Connection::getInstance();
+
     }
 
     public function all() {
@@ -81,5 +84,8 @@ class BaseModel extends Connection{
             // مدیریت خطا
             return false;
         }
+
     }
+
 }
+
