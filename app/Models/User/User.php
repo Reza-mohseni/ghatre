@@ -23,7 +23,6 @@ protected $table = 'users';
                         'Email' => $Email,
                         'PhoneNumber' => $NumberPhone,
                         'Password' => $hashedPassword,
-                        'created_at'  => date('Y-m-d H:i:s'),
                     ];
                     return $this->save($userData);
                 } else {

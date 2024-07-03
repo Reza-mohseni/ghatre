@@ -1,0 +1,332 @@
+@font-face {
+    font-family: vazir;
+    src: url(../../font/Vazir-Thin.woff2)format(woff2);
+}
+
+@font-face {
+    font-family: yekan;
+    src: url(../../font/Yekan.woff2)format(woff2);
+}
+
+@font-face {
+    font-family: iransans;
+    src: url(../../font/IRANSansWeb_Medium.woff2)format(woff2);
+}
+
+@font-face {
+    font-family: Bnazanin;
+    src: url(../../font/BNazanin.woff2)format(woff2);
+}
+
+* {
+    /* font-family: 'vazir'; */
+    direction: rtl;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.conteyner {
+    width: 100%;
+    transition: all step-end 0.5s;
+    height: 1050px;
+    max-width: 1900px;
+}
+
+
+/* منوی راست */
+.menu {
+    height: 965px;
+    width: 6.4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: right;
+    box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.logo {
+    font-size: 25px;
+    color: #5e5e5e;
+}
+
+.ghatre {
+    margin-top: 25px !important;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 36.5px;
+    transition: all ease-out 0.5s;
+    text-decoration: none;
+}
+
+.menu_items-text:hover {
+    color: #F66B64;
+}
+
+.menu_items-text {
+    color: #666666;
+    margin-top: 4px;
+}
+
+/* منوی راست پایان */
+/* منوی بالا */
+.topbar {
+    margin-top: 30px;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90.4%;
+    height: 80px;
+    margin-left: 1.1%;
+    margin-right: 2%;
+    box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.user p {
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.img-user img {
+    border-radius: 64px;
+}
+
+.notification {
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.seting {
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.topbar-r {
+    display: flex;
+    align-items: center;
+}
+
+.icon-menu {
+    font-size: 1.8rem;
+    margin-left: 15px;
+    display: none;
+}
+
+/* منوی بالا پایان */
+/* نمودار */
+.chart-box {
+    height: 700px;
+    width: 90.4%;
+    margin-left: 10px;
+    float: left;
+    overflow-x: scroll !important;
+    margin-bottom: 13px;
+    margin-left: 1.1%;
+    margin-right: 2%;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.chart-box h3 {
+    margin-top: 5px;
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+
+.chart-box canvas {
+    height: 620px !important;
+    width: 1600px !important;
+}
+
+.chartjs-render-monitor {
+    animation: chartjs 1.5s ease-in-out !important;
+    transition: all ease 0.3s !important;
+}
+
+@keyframes chartjs {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* نمودار پایان */
+/* هشدار ها */
+.alert {
+    width: 90.5%;
+    box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.3);
+    height: auto;
+    border-radius: 10px;
+    margin-left: 1.1%;
+    margin-right: 2%;
+    margin-top: 30px;
+    float: left;
+
+}
+
+.alert-items {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 10px;
+    border-radius: 8px
+}
+
+.alert_items-icon {}
+
+.alert_items-text {}
+
+/* ریسپانسیو */
+@media screen and (max-width:768px) {
+    .menu {
+        width: 130px;
+        position: fixed;
+        background-color: #fff;
+        top: 0;
+        right: -210px;
+        overflow-x: scroll;
+        transition: 0.4s all;
+    }
+
+    .menu-items {
+        margin-top: 5px !important;
+    }
+
+    .icon-menu {
+        display: block;
+    }
+
+    .topbar,
+    .conteyner-box {
+        width: 99%;
+    }
+}
+
+/* اسکرول بار */
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 15px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #e0e0e0;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #f3f3f3;
+}
+
+/* اسکرول بار پایان */
+
+
+.switch {
+    position: relative;
+    width: 80px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 20px;
+    display: none;
+}
+
+.flicker {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transition: 0.3s;
+    box-shadow: inset 4px 4px 4px rgb(255, 255, 255),
+        inset -4px -4px 4px rgb(195 193 198 / 90%);
+}
+
+.moon {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    box-shadow: #FFFFFF;
+    background-color: #fff;
+    position: absolute;
+    top: 5px;
+    left: 45px;
+}
+
+/* استایل حالت تاریک */
+.dark {
+    background-color: #0F0F2F;
+    /* رنگ پس‌زمینه در حالت تاریک */
+    color: #ffffff !important;
+    /* رنگ متن در حالت تاریک */
+}
+
+.dark .menu,
+.dark .topbar,
+.dark .chart-box,
+.dark .alert-items,
+.dark p {
+    background-color: #010123;
+    color: #ffffff !important;
+}
+
+.dark .flicker {
+    transform: translateX(40px);
+}
+
+
+.dark ::-webkit-scrollbar-track {
+    background: #010123;
+    /* رنگ پس‌زمینه اسکرول‌بار در حالت تاریک */
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #0F0F2F;
+    /* رنگ دستگیره اسکرول‌بار در حالت تاریک */
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #0F0F2F;
+    /* رنگ دستگیره اسکرول‌بار هنگام هاور در حالت تاریک */
+}

@@ -3,8 +3,8 @@
 namespace App\Models\ORM;
 
 use PDO;
-
 require_once __DIR__ . '/../../../vendor/autoload.php';
+
 use Dotenv\Dotenv;
 class Connection {
     private static $instance = null;
@@ -22,15 +22,14 @@ class Connection {
             $dbName = $_ENV['DB_NAME'];
             $dbUser = $_ENV['DB_USER'];
             $dbPass = $_ENV['DB_PASS'];
-            $dbPort = $_ENV['DB_PORT'];
 
             self::$instance = new PDO(
-                "mysql:host=$dbHost;port=$dbPort;dbname=$dbName", // تصحیح رشته DSN
+                "mysql:host=$dbHost;dbname=$dbName",
                 $dbUser,
                 $dbPass
             );
             self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
-         return self::$instance;
+        return self::$instance;
     }
 }

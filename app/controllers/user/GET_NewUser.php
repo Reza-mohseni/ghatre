@@ -6,13 +6,12 @@ use App\Models\User\User;
 
 require_once '../../Models/User/User.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $NumberPhone = $_POST['NumberPhone'];
+    $NumberPhone ='0'. $_POST['NumberPhone'];
     $Email = $_POST['Email'] ;
     $Password = $_POST['Password'];
     $ConfirmPassword = $_POST['ConfirmPassword'] ;
     $LastName = $_POST['LastName'];
     $name = $_POST['Name'] ;
-
     $newuser = new User();
     if (strlen($Password) >= 8) {
         if ($ConfirmPassword===$Password){
