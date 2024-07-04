@@ -7,9 +7,13 @@
     <list default="true" id="0cb76e02-6fda-475f-ae2c-34c194904bd3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/app/Models/temperature/temperature.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/Arduino/SoilMoisture.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/tets.txt" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/app/views/Counter/Counter.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Counter/Counter.html" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +80,7 @@
       <recent name="C:\xampp\htdocs\ghatre\app\views\assets\Login&amp;SinUp\js" />
     </key>
   </component>
+<<<<<<< Updated upstream
   <component name="RunManager" selected="PHP Script.watering.php">
     <configuration name="Counter.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ghatre/views/Counter/Counter.html" useBuiltInWebServerPort="true">
       <method v="2" />
@@ -87,14 +92,26 @@
       <method v="2" />
     </configuration>
     <configuration name="watering.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/controllers/Arduino/watering.php">
+=======
+  <component name="RunManager" selected="JavaScript Debug.Counter.html">
+    <configuration name="Counter.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ghatre/views/Counter/Counter.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Rain.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ghatre/views/Rain/Rain.html" useBuiltInWebServerPort="true">
+>>>>>>> Stashed changes
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< Updated upstream
         <item itemvalue="PHP Script.watering.php" />
         <item itemvalue="JavaScript Debug.watering.php" />
         <item itemvalue="JavaScript Debug.senddata.html" />
         <item itemvalue="JavaScript Debug.Counter.html" />
+=======
+        <item itemvalue="JavaScript Debug.Counter.html" />
+        <item itemvalue="JavaScript Debug.Rain.html" />
+>>>>>>> Stashed changes
       </list>
     </recent_temporary>
   </component>
@@ -114,7 +131,15 @@
       <workItem from="1719854211190" duration="10757000" />
       <workItem from="1719888226618" duration="11896000" />
       <workItem from="1719931682133" duration="2836000" />
+<<<<<<< Updated upstream
       <workItem from="1720103300433" duration="3205000" />
+=======
+      <workItem from="1719987377431" duration="1062000" />
+      <workItem from="1720019706124" duration="2795000" />
+      <workItem from="1720067857756" duration="11000" />
+      <workItem from="1720077404018" duration="603000" />
+      <workItem from="1720093486648" duration="372000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
