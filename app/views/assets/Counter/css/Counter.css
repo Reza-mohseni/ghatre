@@ -26,14 +26,18 @@
 html {
     font-size: 15px;
 }
-body{
+
+body {
     margin: 0;
     padding: 0;
+    height: 2180px;
+    max-width: 2000px;
 }
+
 /* منوی راست */
 .menu {
-    height: 2030px;
-    width: 6.3%;
+    height: 2080px;
+    width: 8%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,7 +86,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 90%;
+    width: 88%;
     height: 80px;
     margin-left: 1.1%;
     margin-right: 2%;
@@ -121,7 +125,7 @@ body{
 }
 
 .icon-menu {
-    font-size: 1.8rem !important;
+    font-size: 1.5rem !important;
     margin-left: 15px;
     display: none;
 }
@@ -130,7 +134,7 @@ body{
 /* نمودار */
 .chart-box {
     height: 700px;
-    width: 89.5%;
+    width: 87%;
     margin-left: 1.1%;
     margin-right: 2%;
     float: left;
@@ -178,7 +182,7 @@ body{
 /* جدول بارش و آبیارری */
 .tabel-box {
     height: 600px;
-    width: 89%;
+    width: 86.4%;
     float: left;
     margin-left: 1.1%;
     margin-right: 2%;
@@ -217,10 +221,10 @@ table {
 /* جدول بارش و آبیارری پایان */
 .conteyner-box {
     display: flex;
-    width: 90%;
+    width: 87%;
     flex-wrap: wrap;
     float: left;
-    margin-top: 15px;
+    margin-top: 30px;
     justify-content: space-between;
     margin-left: 1.1%;
     margin-right: 2%;
@@ -386,6 +390,16 @@ table {
 /* صندوق پیام ها پایان */
 /* respansev */
 @media screen and (max-width:1024px) {
+    .menu {
+        width: 10%;
+    }
+
+    .topbar,
+    .chart-box,
+    .tabel-box,
+    .conteyner-box {
+        width: 84%;
+    }
 
     .svg-dama,
     .svg-darsad {
@@ -396,16 +410,11 @@ table {
         margin-left: auto;
         margin-right: auto;
     }
+
 }
-@media screen and (max-width:910px) {
-    .menu{
-        width: 10%;
-    }
-    .topbar,.chart-box,
-    .tabel-box,.conteyner-box{
-        width: 84%;
-    }
-}
+
+@media screen and (max-width:910px) {}
+
 @media screen and (max-width:768px) {
     * {
         font-size: 14px;
@@ -435,7 +444,8 @@ table {
     }
 
     .topbar,
-    .conteyner-box {
+    .conteyner-box,
+    .tabel-box {
         width: 99%;
     }
 
@@ -443,9 +453,6 @@ table {
         width: 98%;
     }
 
-    .conteyner {
-        width: 99%;
-    }
 
 }
 
@@ -475,7 +482,14 @@ table {
         color: rgba(130, 36, 218, 0.651);
     }
 }
-
+@media screen and (max-width:425px) {
+    .chart-box canvas {
+        height: 500px !important;
+    }
+    .chart-box {
+        height: 580px !important;
+    }
+}
 /* respansev end */
 
 /* اسکرول بار */

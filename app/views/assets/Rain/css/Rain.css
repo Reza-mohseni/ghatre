@@ -122,9 +122,8 @@ body {
     justify-content: space-between;
     width: 100%;
 }
-
 .icon-menu {
-    font-size: 1.8rem;
+    font-size: 1.5rem !important;
     margin-left: 15px;
     display: none;
 }

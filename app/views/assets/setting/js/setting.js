@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
-  // Load saved user data and font settings on page load
+
   loadUserData();
   loadFontSettings();
 
-  // Save user data on form submit
+
   document.getElementById('userForm').addEventListener('submit', function(event) {
       event.preventDefault();
       saveUserData();

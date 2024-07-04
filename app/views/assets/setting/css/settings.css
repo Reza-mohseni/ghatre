@@ -127,9 +127,8 @@ body.yekan {
     display: flex;
     align-items: center;
 }
-
 .icon-menu {
-    font-size: 1.8rem;
+    font-size: 1.5rem !important;
     margin-left: 15px;
     display: none;
 }

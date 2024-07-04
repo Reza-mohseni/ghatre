@@ -2,18 +2,22 @@
     font-family: vazir;
     src: url(../../font/Vazir-Thin.woff2)format(woff2);
 }
+
 @font-face {
-    font-family:yekan ;
+    font-family: yekan;
     src: url(../../font/Yekan.woff2)format(woff2);
 }
+
 @font-face {
-    font-family:iransans ;
+    font-family: iransans;
     src: url(../../font/IRANSansWeb_Medium.woff2)format(woff2);
 }
+
 @font-face {
-    font-family:Bnazanin ;
+    font-family: Bnazanin;
     src: url(../../font/BNazanin.woff2)format(woff2);
 }
+
 * {
     /* font-family: 'vazir'; */
     direction: rtl;
@@ -25,8 +29,8 @@ body {
     font-family: iransans;
     margin: 0;
     padding: 0;
-  }
-  
+}
+
 
 
 .conteyner {
@@ -39,13 +43,15 @@ body {
 
 /* منوی راست */
 .menu {
-    height: 950px;
-    width: 6.4%;
+    height: 1200px;
+    width: 8%;
     display: flex;
     flex-direction: column;
     align-items: center;
     float: right;
     box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.3);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .logo {
@@ -83,7 +89,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 90.4%;
+    width: 88%;
     height: 80px;
     margin-left: 1.1%;
     margin-right: 2%;
@@ -122,7 +128,7 @@ body {
 }
 
 .icon-menu {
-    font-size: 1.8rem;
+    font-size: 1.5rem !important;
     margin-left: 15px;
     display: none;
 }
@@ -130,43 +136,149 @@ body {
 /* منوی بالا پایان */
 /* صندوق پیام */
 .mail-box {
-    width: 90.4%;
+    float: left;
+    width: 88.5%;
     margin-top: 30px;
     margin-left: 1.1%;
-    margin-right: 2%;
-    float: right;
-}
-.mail-box h2 {
-    height: 50px;
-    width: 98%;
-    border-radius: 10px;
-    padding-right: 10px;
-}
-.mail-items {
+    margin-right: 2.4%;
+  }
+
+  .mail-display {
+    display: none;
+  }
+
+  .mail-display.active {
+    display: block;
+  }
+
+  .pagination {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .pagination button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px #00000040;
+
+  }
+
+  .pagination .active {
+    background-color: #f66b64;
+    color: white;
+  }
+  .mail-items {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     height: 60px;
-    width: 100%;
-    box-shadow: -4px -2px 8px rgba(0, 0, 0, 0.3),
-     4px 0px 8px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    margin-top: 20px;
+    box-shadow: -2px -2px 4px #00000045,
+    2px 2px 4px #00000045;
+    padding: 3px 15px;
+    border-radius: 6px;
+    margin-top: 15px;
 }
-.icon-mail{
+.mail-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 5%;
+}
+.text-tatel__aler{
     display: flex;
     align-items: center;
-    margin-right: 15px;
+    width: 30%;
+    justify-content: space-between;
 }
-.icon-mail p {
-    margin-right: 20px;
+.button {
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #F66B64;
+    box-shadow: 1px 1px 3px #00000045;
+    padding: 10px;
 }
-.text-alert p{
-    margin-right: 30px;
+/* پاپ اپ */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+  .popup-box {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1100;
+    transition: top 0.5s ease-out;
+    width: 350px;
+    height: 400px;
+  }
+  
+  .popup-box.show {
+    top: 20%;
+  }
+  
+  .popup-box h2,
+  .popup-box p {
+    margin: 0 0 10px;
+    width: 100%;
+  }
+  
+  .close-btn {
+    background-color: #ccc;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .open-btn {
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  .close-btn {
+    background-color: #60b530;
+    color: #fff;
+    width: 95%;
 }
+
+/* پاپ اپ پایان */
+/* صندوق پیام پایان */
+@media screen and (max-width:1024px) {
+    .menu {
+        width: 10%;
+    }
+
+    .topbar,
+    .mail-box {
+        width: 84%;
+    }
+    .mail-icon{
+        width: 10%;
+    }
+
+}
+
 @media screen and (max-width:768px) {
-    *{
+    * {
         font-size: 14px;
     }
+
     .menu {
         width: 150px;
         position: fixed;
@@ -176,9 +288,11 @@ body {
         overflow-x: scroll;
         transition: 0.4s all;
     }
-    .bi{
+
+    .bi {
         font-size: 1.6rem;
     }
+
     .menu-items {
         margin-top: 5px !important;
     }
@@ -192,20 +306,24 @@ body {
     .conteyner-box {
         width: 99%;
     }
-    table{
-        width: 115%;
-    }
-    .t-link{
-        padding: 2.5px 5px;
-    }
     .mail-box {
         width: 98%;
         margin-right: auto;
         margin-left: auto;
     }
+    .button{
+        padding: 3px;
+    }
+    .mail-icon svg {
+        display: none;
+    }
 }
-
-
+@media screen and (max-width:425px) {
+    .text-tatel__aler{
+        width: 55%;
+    }
+    
+}
 /* اسکرول بار */
 ::-webkit-scrollbar {
     width: 7px;
@@ -233,18 +351,20 @@ body {
 
 
 body {
-    background-color: #f0f0f0; /* رنگ پس‌زمینه در حالت روشن */
-    color: #666666; /* رنگ متن در حالت روشن */
-    transition:  0.3s, color 0.3s;
+    background-color: #f0f0f0;
+    /* رنگ پس‌زمینه در حالت روشن */
+    color: #666666;
+    /* رنگ متن در حالت روشن */
+    transition: 0.3s, color 0.3s;
 }
 
 .box {
-    background-color: #ffffff; 
-    color: #666666; 
+    background-color: #ffffff;
+    color: #666666;
     padding: 20px;
     margin: 10px;
     border-radius: 10px;
-    transition:  0.3s, color 0.3s;
+    transition: 0.3s, color 0.3s;
 }
 
 .switch {
@@ -284,12 +404,17 @@ body {
 
 /* استایل حالت تاریک */
 .dark {
-    background-color: #0F0F2F; /* رنگ پس‌زمینه در حالت تاریک */
-    color: #ffffff !important ; /* رنگ متن در حالت تاریک */
+    background-color: #0F0F2F;
+    /* رنگ پس‌زمینه در حالت تاریک */
+    color: #ffffff !important;
+    /* رنگ متن در حالت تاریک */
 }
 
-.dark .menu,.dark .topbar,
-.dark .mail-items,.dark p,.dark .mail-box h2{
-    background-color: #010123 ; 
-    color: #ffffff !important ; 
+.dark .menu,
+.dark .topbar,
+.dark .mail-items,
+.dark p,
+.dark .mail-box h2 {
+    background-color: #010123;
+    color: #ffffff !important;
 }
