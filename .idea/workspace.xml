@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0cb76e02-6fda-475f-ae2c-34c194904bd3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Models/temperature/temperature.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ORM/BaseModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ORM/BaseModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ORM/Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ORM/Connection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Arduino/SoilMoisture.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Arduino/SoilMoisture.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/user/GET_NewUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/user/GET_NewUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/temperature/temperature.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Arduino/SoilMoisture.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/tets.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,8 +71,32 @@
       <recent name="C:\xampp\htdocs\ghatre\config" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ghatre\app\controllers\Arduino" />
+      <recent name="C:\xampp\htdocs\ghatre\app\controllers\Arduino\weather_conditions" />
       <recent name="C:\xampp\htdocs\ghatre\app\views\assets\Login&amp;SinUp\js" />
     </key>
+  </component>
+  <component name="RunManager" selected="PHP Script.watering.php">
+    <configuration name="Counter.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ghatre/views/Counter/Counter.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="senddata.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ghatre/senddata.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="watering.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ghatre/controllers/Arduino/watering.php" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="watering.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/controllers/Arduino/watering.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.watering.php" />
+        <item itemvalue="JavaScript Debug.watering.php" />
+        <item itemvalue="JavaScript Debug.senddata.html" />
+        <item itemvalue="JavaScript Debug.Counter.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -94,6 +114,7 @@
       <workItem from="1719854211190" duration="10757000" />
       <workItem from="1719888226618" duration="11896000" />
       <workItem from="1719931682133" duration="2836000" />
+      <workItem from="1720103300433" duration="3205000" />
     </task>
     <servers />
   </component>
@@ -102,5 +123,16 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
