@@ -46,12 +46,31 @@ protected $table = 'users';
             // بررسی رمز عبور
             if (password_verify($Password, $user['Password'])) {
                 // موفقیت در ورود
-                session_start();
+                // انتقال به HTTPS در صورت نیاز
+                if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
+                    header('Location: https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+                    exit;
+                }
+                // شروع session با تنظیمات امنیتی
+                session_start([
+                    'cookie_lifetime' => 86400,
+                    'cookie_secure' => true,
+                    'cookie_httponly' => true,
+                    'use_strict_mode' => true
+                ]);
+
+                // تنظیم اطلاعات کاربر در session
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['user_name'] = $user['Name'];
+                $_SESSION['last_name'] = $user['LastName'];
+                $_SESSION['Email'] = $user['Email'];
 
-                // ریدایرکت به صفحه مورد نظر
+                // بازتولید شناسه session
+                session_regenerate_id(true);
+
                 header('Location: /dashboard.php');
+
+
                 exit();
             } else {
                 return 'نام کاربر ی یا رمز عبور اشتباه است';

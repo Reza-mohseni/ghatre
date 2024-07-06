@@ -9,5 +9,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $Password = $_POST['Password'];
     $loginuser = new User();
     echo json_encode(['error' => true, 'message' => $loginuser->LoginUser($Password,$UserName)]);
-//    echo json_encode(['error' => true, 'message' => 'ختخت']);
 }

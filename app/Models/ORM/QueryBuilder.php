@@ -81,8 +81,8 @@ class QueryBuilder  extends  Connection{
     public function rightJoin($table, $column1, $operator, $column2) {
         return $this->join($table, $column1, $operator, $column2, 'RIGHT');
     }
-    public function whereLast30Days($column) {
-        $this->query .= "WHERE $column >= NOW() - INTERVAL 30 DAY ";
+    public function whereLast15Days($column) {
+        $this->query .= "WHERE $column >= NOW() - INTERVAL 15 DAY ";
         return $this;
     }
 

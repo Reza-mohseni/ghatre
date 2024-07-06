@@ -7,7 +7,7 @@ use App\Models\ORM\QueryBuilder;
 $queryBuilder = new QueryBuilder();
 $results = $queryBuilder->select('DATE(created_at) as date, ROUND(AVG(degree_humidity) / 10.23, 0) as average_humidity')
     ->from('watering')
-    ->whereLast30Days('created_at')
+    ->whereLast15Days('created_at')
     ->groupBy('DATE(created_at)')
     ->execute();
 

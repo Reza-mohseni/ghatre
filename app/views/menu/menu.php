@@ -1,9 +1,13 @@
+<?php
+require_once '../../core/healper/healper.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="<?= asset('menu/style/style.css') ?> ">
     <title>Document</title>
 </head>
 <body>
@@ -14,7 +18,7 @@
           </div>
         </a>
         <div>
-          <a href="../Counter/Counter.html" class="menu-items">
+          <a href="../dashboard/dashboard.php" class="menu-items">
             <svg xmlns="http://www.w3.org/2000/svg" width="23.601" height="19.2" viewBox="0 0 23.601 19.2">
               <g id="Icon" transform="translate(-62.7 -129.4)">
                 <g id="Icon-2" data-name="Icon" transform="translate(62.7 127.311)">
@@ -112,6 +116,5 @@
           </div>
         </div>
       </div>  
-      <script src="js/script.js"></script>
 </body>
 </html>
