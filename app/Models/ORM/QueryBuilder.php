@@ -2,7 +2,11 @@
 
 namespace App\Models\ORM;
 
-class QueryBuilder {
+use App\Models\ORM\Connection;
+require_once __DIR__ . '/../ORM/Connection.php';
+
+
+class QueryBuilder  extends  Connection{
     protected $connection;
     protected $query;
     protected $params = [];
@@ -77,11 +81,15 @@ class QueryBuilder {
     public function rightJoin($table, $column1, $operator, $column2) {
         return $this->join($table, $column1, $operator, $column2, 'RIGHT');
     }
+    public function whereLast30Days($column) {
+        $this->query .= "WHERE $column >= NOW() - INTERVAL 30 DAY ";
+        return $this;
+    }
 
     public function execute() {
         $stmt = $this->connection->prepare($this->query);
         $stmt->execute($this->params);
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     private function bindParam($key, $value) {

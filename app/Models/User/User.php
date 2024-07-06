@@ -58,6 +58,7 @@ protected $table = 'users';
             }
 
         }
+
 }
 
 
