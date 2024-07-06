@@ -21,10 +21,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
     </include_path>
   </component>
-<<<<<<< Updated upstream
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
-=======
->>>>>>> Stashed changes
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>

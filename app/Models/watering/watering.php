@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models\watering;
-require_once '../ORM/BaseModel.php';
+require_once '../../Models/ORM/BaseModel.php';
 use App\Models\ORM\BaseModel;
 class watering extends BaseModel
 {

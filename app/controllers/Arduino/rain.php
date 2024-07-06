@@ -7,4 +7,4 @@ use App\Models\rain\rain;
 $status=$_POST['status'];
 
 $insert= new rain();
-$insert->insertrain();
+$insert->insertrains($status);

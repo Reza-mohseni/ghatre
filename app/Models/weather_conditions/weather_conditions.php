@@ -5,7 +5,7 @@ namespace App\Models\weather_conditions;
 
 use App\Models\ORM\BaseModel;
 
-require_once '../ORM/BaseModel.php';
+require_once '../../Models/ORM/BaseModel.php';
 class weatherconditions extends BaseModel
 {
     protected $table = 'weatherconditions';
@@ -16,6 +16,6 @@ class weatherconditions extends BaseModel
             'humidity' => $humidity,
             'created_at' => date('Y-m-d H:i:s')
         ];
-        return $this->save($weatherconditions);
+        $this->save($weatherconditions);
     }
 }
