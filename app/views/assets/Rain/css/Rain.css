@@ -17,25 +17,14 @@
     font-family: Bnazanin;
     src: url(../../font/BNazanin.woff2)format(woff2);
 }
-
-* {
-    direction: rtl;
-}
-
-
-
 body {
-    font-family: vazir, Arial, sans-serif;
+    font-family: iransans;
     margin: 0;
     padding: 0;
-    max-width: 1900px;
-    width: 100%;
-    height: 850px;
+    height: 950px;
+    max-width: 2000px;
+    direction: rtl;
 }
-
-
-
-
 /* منوی راست */
 .menu {
     height: 900px;
@@ -102,19 +91,6 @@ body {
     margin-top: 5px;
 }
 
-.img-user img {
-    border-radius: 64px;
-}
-
-.notification {
-    margin-right: 20px;
-    margin-bottom: 10px;
-}
-
-.seting {
-    margin-right: 5px;
-    margin-bottom: 10px;
-}
 
 .topbar-r {
     display: flex;
@@ -132,19 +108,20 @@ body {
 /* جدول بارش و آبیارری */
 .tabel-box {
     height: 600px;
-    width: 90%;
-    margin-top: 30px;
+    width: 88.4%;
     float: left;
-    margin-left: 1.2%;
+    margin-left: 1.1%;
     margin-right: 2%;
+    margin-top: 30px;
     border-radius: 10px;
+    padding: 10px;
+    box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 table {
     width: 100%;
     height: 590px;
-
-    direction: rtl;
+    direction: ltr;
     transition: all ease 0.3s;
     text-align: center;
     margin-left: 10px;
@@ -152,26 +129,43 @@ table {
 }
 
 .t-heder {
-    background-color: #F7F7F7;
     color: #4b4b4b;
 }
 
 .t-item {
-    border-bottom: 1px solid rgba(112, 112, 112, 0.308);
     color: #888888;
     transition: all ease 0.2s;
 }
 
-.t-item:hover {
-    background-color: #F7F7F7;
-    color: #666666;
-}
-
-.th {
+.tabel-box table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0;
     padding: 0;
 }
 
+.tabel-box th,
+.tabel-box td {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    text-align: center;
+}
+
+
+
 /* جدول بارش و آبیارری پایان */
+@media screen and (max-width:1024px) {
+    .menu {
+        width: 10%;
+    }
+    .topbar {
+        width: 86%;
+    }
+    .tabel-box {
+        width: 84%;
+    }
+}
 @media screen and (max-width:768px) {
     .conteyner {
         width: 98%;

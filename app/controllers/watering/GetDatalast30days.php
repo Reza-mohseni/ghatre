@@ -1,5 +1,5 @@
 <?php
-
+header('Content-Type: application/json');
 require_once '../../Models/ORM/QueryBuilder.php';
 
 use App\Models\ORM\QueryBuilder;
@@ -20,3 +20,6 @@ foreach ($results as $item)
     $i++;
 }
 echo json_encode($date);
+
+
+ ?>

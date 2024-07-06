@@ -18,22 +18,15 @@
     src: url(../../font/BNazanin.woff2)format(woff2);
 }
 
-* {
-    /* font-family: 'vazir'; */
-    direction: rtl;
-
-}
-
-html {
-    font-size: 15px;
-}
-
-
 body {
+    font-family: iransans;
     margin: 0;
     padding: 0;
-    height: 2300px;
+    height: 2180px;
+    max-width: 2000px;
+    direction: rtl;
 }
+
 
 
 
@@ -197,6 +190,7 @@ body {
     align-items: center;
     justify-content: space-around;
 }
+
 .rotobat {
     width: 27.5%;
     height: 540px;
@@ -358,6 +352,7 @@ body {
     body {
         height: 2100px;
     }
+
     * {
         font-size: 14px;
     }
@@ -380,15 +375,17 @@ body {
         display: block;
         font-size: 1.8rem;
     }
+
     .topbar,
     .conteyner-box {
         width: 99%;
     }
-    
+
     .chart-box canvas {
         height: 400px !important;
         width: 1100px !important;
     }
+
     .chart-box {
         width: 98%;
         height: 470px;
@@ -416,6 +413,7 @@ body {
         margin-top: 15px;
     }
 }
+
 /* استایل حالت تاریک */
 .dark {
     background-color: #0F0F2F;

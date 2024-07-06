@@ -31,6 +31,7 @@ body {
     height: 2180px;
     max-width: 2000px;
     direction: rtl;
+    transition: 0.3s, color 0.3s;
 }
 
 /* منوی راست */
@@ -531,13 +532,6 @@ table {
 
 /* استایل حالت روشن */
 
-body {
-    background-color: #f0f0f0;
-    /* رنگ پس‌زمینه در حالت روشن */
-    color: #666666;
-    /* رنگ متن در حالت روشن */
-    transition: 0.3s, color 0.3s;
-}
 
 .box {
     background-color: #ffffff;

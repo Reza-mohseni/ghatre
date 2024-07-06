@@ -18,15 +18,16 @@ function applyFontSettings() {
               header.style.fontSize = (fontSize + 8) + 'px';
           });
 
-          // تنظیم فونت و سایز فونت دکمه‌ها
-          const buttons = document.querySelectorAll('button');
-          buttons.forEach(button => {
-              button.style.fontFamily = fontSettings.fontname;
-              button.style.fontSize = fontSize + 'px';
+          // تنظیم فونت و سایز فونت دکمه‌ها و اینپوت‌ها و تگ‌های سلکت
+          const buttons = document.querySelectorAll('button, input[type="button"], input[type="submit"], select');
+          buttons.forEach(element => {
+              element.style.fontFamily = fontSettings.fontname;
+              element.style.fontSize = fontSize + 'px';
           });
       }
   }
 }
+
 
 // حالت شب 
   const switchElement = document.querySelector('.switch');

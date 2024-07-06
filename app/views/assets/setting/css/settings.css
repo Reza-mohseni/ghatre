@@ -17,24 +17,14 @@
     font-family: Bnazanin;
     src: url(../../font/BNazanin.woff2)format(woff2);
 }
-
-* {
-    /* font-family: 'vazir'; */
+body {
+    font-family: iransans;
+    margin: 0;
+    padding: 0;
+    height: 2180px;
+    max-width: 2000px;
     direction: rtl;
 }
-
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-
-body.yekan {
-    font-family: yekan, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
 .conteyner {
     width: 100%;
     transition: all step-end 0.5s;
@@ -42,8 +32,6 @@ body.yekan {
     max-width: 1900px;
 
 }
-
-
 /* منوی راست */
 .menu {
     height: 900px;
