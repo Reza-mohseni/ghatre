@@ -1,7 +1,7 @@
 <?php
 
 //config
-define('BASE_URL', 'http://localhost/ghatre');
+define('BASE_URL', 'https://danatm.ir');
 
 function redirect($url)
 {
