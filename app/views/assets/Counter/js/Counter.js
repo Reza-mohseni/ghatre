@@ -26,7 +26,7 @@ $(document).ready(function () {
 
   function updateChart() {
     $.ajax({
-      url: 'data.php',
+      url: 'https://danatm.ir/app/controllers/watering/GetDatalast30days.php',
       method: 'GET',
       success: function (response) {
         console.log("Data received from PHP: ", response);

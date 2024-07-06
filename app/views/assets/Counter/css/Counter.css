@@ -18,20 +18,19 @@
     src: url(../../font/BNazanin.woff2)format(woff2);
 }
 
-* {
-    font-family: yekan;
-    direction: rtl;
-}
+
 
 html {
     font-size: 15px;
 }
 
 body {
+    font-family: iransans;
     margin: 0;
     padding: 0;
     height: 2180px;
     max-width: 2000px;
+    direction: rtl;
 }
 
 /* منوی راست */
@@ -203,19 +202,27 @@ table {
 }
 
 .t-heder {
-    background-color: #F7F7F7;
     color: #4b4b4b;
 }
 
 .t-item {
-    border-bottom: 1px solid rgba(112, 112, 112, 0.308);
     color: #888888;
     transition: all ease 0.2s;
 }
 
-.t-item:hover {
-    background-color: #F7F7F7;
-    color: #666666;
+.tabel-box table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.tabel-box th,
+.tabel-box td {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    text-align: center;
 }
 
 /* جدول بارش و آبیارری پایان */
@@ -412,9 +419,6 @@ table {
     }
 
 }
-
-@media screen and (max-width:910px) {}
-
 @media screen and (max-width:768px) {
     * {
         font-size: 14px;
@@ -482,14 +486,17 @@ table {
         color: rgba(130, 36, 218, 0.651);
     }
 }
+
 @media screen and (max-width:425px) {
     .chart-box canvas {
         height: 500px !important;
     }
+
     .chart-box {
         height: 580px !important;
     }
 }
+
 /* respansev end */
 
 /* اسکرول بار */
