@@ -8,14 +8,11 @@ function redirect($url)
     header('Location: '. trim(BASE_URL, '/ ') . '/' . trim($url, '/ '));
     exit;
 }
-// redirect('panel/category');
 
 function asset($file)
 {
     return trim(BASE_URL, '/ ') . '/' .'app/views/assets/'. trim($file, '/ ');
 }
-// <img src="asset(assets/image/hassan.png)">
-// echo asset('assets/css/style.css');
 
 function url($url)
 {

@@ -25,7 +25,7 @@ $(document).ready(function () {
 
   function updateChart() {
     $.ajax({
-      url: 'http://localhost/ghatre/app/controllers/watering/GetDatalast30days.php', // مسیر صحیح به فایل PHP
+      url: 'https://danatm.ir/app/controllers/watering/GetDatalast15days.php', // مسیر صحیح به فایل PHP
       method: 'GET',
       success: function (response) {
         console.log("Data received from PHP: ", response); // چاپ داده‌ها در کنسول

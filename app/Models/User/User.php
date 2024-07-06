@@ -63,11 +63,11 @@ protected $table = 'users';
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['user_name'] = $user['Name'];
                 $_SESSION['last_name'] = $user['LastName'];
-                $_SESSION['Email'] = $user['Email'];
+                $_SESSION['email'] = $user['Email'];
+                $_SESSION['phone_number']=$user['PhoneNumber'];
 
                 // بازتولید شناسه session
                 session_regenerate_id(true);
-
                 header('Location: /dashboard.php');
 
 
