@@ -4,7 +4,7 @@
 namespace App\Models\User;
 
 use App\Models\ORM\BaseModel;
-
+require_once '../../core/healper/healper.php';
 require_once '../../Models/ORM/BaseModel.php';
 class User extends BaseModel
 {
@@ -23,6 +23,7 @@ protected $table = 'users';
                         'Email' => $Email,
                         'PhoneNumber' => $NumberPhone,
                         'Password' => $hashedPassword,
+                        'role' => 0,
                         'created_at'  => date('Y-m-d H:i:s'),
                     ];
                     return $this->save($userData);
@@ -37,7 +38,6 @@ protected $table = 'users';
                 return 'پسورد و یا نام کاربری وارد نشده!';
             }
 
-            // پیدا کردن کاربر با استفاده از ایمیل یا شماره تلفن
             $user = $this->Find($UserName,$UserName);
             if (!$user) {
                 return 'شما ثبت نام نکرده اید';
@@ -45,6 +45,7 @@ protected $table = 'users';
 
             // بررسی رمز عبور
             if (password_verify($Password, $user['Password'])) {
+                redirect('app/views/dashboard/dashboard.php');
                 // موفقیت در ورود
                 // انتقال به HTTPS در صورت نیاز
                 if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
@@ -68,7 +69,7 @@ protected $table = 'users';
 
                 // بازتولید شناسه session
                 session_regenerate_id(true);
-                header('Location: /dashboard.php');
+//                header('Location: /dashboard.php');
 
 
                 exit();
