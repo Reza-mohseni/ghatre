@@ -21,9 +21,10 @@ body {
     font-family: iransans;
     margin: 0;
     padding: 0;
-    height: 2180px;
+    height: 770px;
     max-width: 2000px;
     direction: rtl;
+    font-size: 18px;
 }
 .conteyner {
     width: 100%;
@@ -133,9 +134,7 @@ input {
     padding: 5px;
 }
 
-.form-conteyner {
-    display: none;
-}
+
 
 .form-conteyner input {
     display: block;
@@ -188,15 +187,13 @@ label {
 }
 
 .form {
-    width: 90.4%;
-    float: right;
-    margin-left: auto;
-    margin-right: 10px;
+    width: 90%;
+    float: left;
+    margin-left: 1%;
+    margin-right: 2%;
     margin-top: 50px;
     display: grid;
     justify-items: center;
-    margin-left: 1.1%;
-    margin-right: 2%;
 }
 
 .box-button {
@@ -207,7 +204,10 @@ label {
     justify-content: flex-start;
 
 }
-
+button,select {
+    font-family:inherit;
+    font-size: inherit;
+}
 .changpass {
     background-color: #cd2727;
     color: #fff;
@@ -472,72 +472,6 @@ body {
 
 /* استایل برای پس‌زمینه تاریک پشت پاپ‌آپ */
 
-.box {
-    display: none;
-}
 
-.box-password {
-    background-color: #f9f9f9;
-    padding: 10px;
-    width: 320px;
-    height: 340px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-    z-index: 1000;
-    border-radius: 8px;
-}
 
-.password_tatile {
-    align-items: start;
-}
 
-.input_password {
-    height: 30px !important;
-}
-
-.popup-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-}
-
-.btn-conteyner {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    margin-top: 5px;
-}
-
-.popup_btn {
-    height: 35px;
-    width: 45%;
-    border-radius: 7px;
-    border: none;
-    background-color: transparent;
-    box-shadow: 1px 1px 4px #00000040, -1px -1px 4px #00000040;
-    margin-top: 10px;
-}
-
-.close-btn {
-    background-color: #60b530;
-    color: #fff;
-}
-
-.save-btn {
-    background-color: #cd2727;
-    color: #fff;
-}
-
-.swal2-confirm,
-.swal2-cancel {
-    font-family: inherit;
-    font-size: inherit;
-}

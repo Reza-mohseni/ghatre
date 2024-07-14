@@ -8,6 +8,7 @@ require_once '../../core/healper/healper.php';
 require_once '../../Models/ORM/BaseModel.php';
 class User extends BaseModel
 {
+
 protected $table = 'users';
         public function createUser($Name, $LastName, $Password, $Email, $NumberPhone)
         {
@@ -34,50 +35,41 @@ protected $table = 'users';
             return false; // در صورت خالی بودن هر یک از ورودی‌ها
         }
         public function LoginUser($Password, $UserName){
-            if (empty($Password) || (empty($UserName) )) {
-                return 'پسورد و یا نام کاربری وارد نشده!';
+
+            if (empty($Password) || empty($UserName) ) {
+                return 0;
             }
 
             $user = $this->Find($UserName,$UserName);
             if (!$user) {
-                return 'شما ثبت نام نکرده اید';
+                return 1;
             }
 
-            // بررسی رمز عبور
             if (password_verify($Password, $user['Password'])) {
-                redirect('app/views/dashboard/dashboard.php');
-                // موفقیت در ورود
-                // انتقال به HTTPS در صورت نیاز
-                if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
-                    header('Location: https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-                    exit;
-                }
-                // شروع session با تنظیمات امنیتی
-                session_start([
-                    'cookie_lifetime' => 86400,
-                    'cookie_secure' => true,
-                    'cookie_httponly' => true,
-                    'use_strict_mode' => true
-                ]);
+                $params = session_get_cookie_params();
+                $params['lifetime'] = 86600;
+                $params['secure'] = true;
+                $params['httponly'] = true;
 
-                // تنظیم اطلاعات کاربر در session
+                session_set_cookie_params($params['lifetime'], $params['path'], $params['domain'], $params['secure'], $params['httponly']);
+                ini_set('session.cookie_samesite', 'Strict');
+                session_start();
                 $_SESSION['user_id'] = $user['id'];
-                $_SESSION['user_name'] = $user['Name'];
+                $_SESSION['name'] = $user['Name'];
                 $_SESSION['last_name'] = $user['LastName'];
                 $_SESSION['email'] = $user['Email'];
-                $_SESSION['phone_number']=$user['PhoneNumber'];
-
-                // بازتولید شناسه session
-                session_regenerate_id(true);
-//                header('Location: /dashboard.php');
+                $_SESSION['phone_number'] = $user['PhoneNumber'];
 
 
-                exit();
+                return 2;
             } else {
-                return 'نام کاربر ی یا رمز عبور اشتباه است';
+                return 3;
             }
 
         }
+
+
+
 
 }
 

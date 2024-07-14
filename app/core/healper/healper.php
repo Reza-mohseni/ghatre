@@ -18,7 +18,6 @@ function url($url)
 {
     return trim(BASE_URL, '/ ') . '/' . trim($url, '/ ');
 }
-// echo url('panel/category');
 
 function dd($var)
 {
@@ -26,7 +25,5 @@ function dd($var)
     var_dump($var);
     exit;
 }
-// $users = ['ali', 'hassan', 'karim'];
-// dd($users);
 
 

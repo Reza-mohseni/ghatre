@@ -17,7 +17,7 @@ class BaseModel extends Connection{
 
     public function all() {
         $stmt = $this->connection->query("SELECT * FROM $this->table");
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
 
@@ -35,6 +35,13 @@ class BaseModel extends Connection{
             $stmt->execute(['Email' => $Email]);
             return $stmt->fetch();
         }
+    }
+
+
+    public function FindbyID($id) {
+        $stmt = $this->connection->prepare("SELECT * FROM $this->table WHERE id = :id");
+        $stmt->execute(['id' => $id]);
+        return $stmt->fetch();
     }
 
 
@@ -70,7 +77,6 @@ class BaseModel extends Connection{
             $stmt->execute($data);
             return $stmt->rowCount();
         } catch (\PDOException $e) {
-            // مدیریت خطا
             return false;
         }
     }
@@ -81,7 +87,6 @@ class BaseModel extends Connection{
             $stmt->execute(['id' => $id]);
             return $stmt->rowCount();
         } catch (\PDOException $e) {
-            // مدیریت خطا
             return false;
         }
 

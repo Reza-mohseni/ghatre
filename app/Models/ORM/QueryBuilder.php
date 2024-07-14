@@ -5,8 +5,7 @@ namespace App\Models\ORM;
 use App\Models\ORM\Connection;
 require_once __DIR__ . '/../ORM/Connection.php';
 
-
-class QueryBuilder  extends  Connection{
+class QueryBuilder extends Connection {
     protected $connection;
     protected $query;
     protected $params = [];
@@ -25,31 +24,17 @@ class QueryBuilder  extends  Connection{
         return $this;
     }
 
-    public function where($column, $operator, $value) {
-        $param = $this->bindParam($column, $value);
-        $this->query .= "WHERE $column $operator $param ";
-        return $this;
-    }
-
-    public function andWhere($column, $operator, $value) {
-        $param = $this->bindParam($column, $value);
-        $this->query .= "AND $column $operator $param ";
-        return $this;
-    }
-
-    public function orWhere($column, $operator, $value) {
-        $param = $this->bindParam($column, $value);
-        $this->query .= "OR $column $operator $param ";
-        return $this;
-    }
-
-    public function limit($limit) {
-        $this->query .= "LIMIT $limit ";
-        return $this;
-    }
-
     public function offset($offset) {
         $this->query .= "OFFSET $offset ";
+        return $this;
+    }
+
+    public function limit($limit, $limits = null) {
+        $this->query .= "LIMIT $limit";
+        if ($limits !== null) {
+            $this->query .= ", $limits";
+        }
+        $this->query .= " ";
         return $this;
     }
 
@@ -58,31 +43,24 @@ class QueryBuilder  extends  Connection{
         return $this;
     }
 
+    public function where($column, $operator, $value) {
+        $param = $this->bindParam($column, $value);
+        $this->query .= "WHERE $column $operator $param ";
+        return $this;
+    }
+
     public function groupBy($column) {
         $this->query .= "GROUP BY $column ";
         return $this;
     }
 
-    public function having($column, $operator, $value) {
-        $param = $this->bindParam($column, $value);
-        $this->query .= "HAVING $column $operator $param ";
-        return $this;
-    }
-
-    public function join($table, $column1, $operator, $column2, $type = 'INNER') {
-        $this->query .= "$type JOIN $table ON $column1 $operator $column2 ";
-        return $this;
-    }
-
-    public function leftJoin($table, $column1, $operator, $column2) {
-        return $this->join($table, $column1, $operator, $column2, 'LEFT');
-    }
-
-    public function rightJoin($table, $column1, $operator, $column2) {
-        return $this->join($table, $column1, $operator, $column2, 'RIGHT');
-    }
-    public function whereLast15Days($column) {
+    public function whereLast14Days($column) {
         $this->query .= "WHERE $column >= NOW() - INTERVAL 15 DAY ";
+        return $this;
+    }
+
+    public function innerJoin($table, $localColumn, $foreignColumn) {
+        $this->query .= "INNER JOIN $table ON $localColumn = $foreignColumn ";
         return $this;
     }
 

@@ -1,7 +1,6 @@
 <?php
 
 ?>
-
 <style>
     footer {
         width: 94.5%;
@@ -13,16 +12,19 @@
         margin: 40px;
         border-radius: 8px;
         float: left;
+        color:#666666;
     }
 
     body {
         margin: 0;
         padding: 0;
     }
+    .dark .footer {
+        background-color: #010123;
+        color: #ffffff !important;
+    }
 </style>
 
-<footer>
-    <h2> v1.0.0 طراحی و توسعه توسط رضا محسنی </h2>
+<footer class="footer">
+    <h3> v 1.0.0 طراحی و توسعه توسط رضا محسنی </h3>
 </footer>
-
-<script src="<?= asset('script/form_setting.js') ?>"></script>

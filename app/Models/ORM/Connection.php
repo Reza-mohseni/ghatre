@@ -13,11 +13,9 @@ class Connection {
 
     public static function getInstance() {
         if (self::$instance === null) {
-            // بارگذاری فایل .env
             $dotenv = Dotenv::createImmutable(__DIR__ . '/../../../');
             $dotenv->load();
 
-            // دریافت اطلاعات پایگاه داده از متغیرهای محیطی
             $dbHost = $_ENV['DB_HOST'];
             $dbName = $_ENV['DB_NAME'];
             $dbUser = $_ENV['DB_USER'];

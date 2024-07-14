@@ -1,14 +1,17 @@
 <?php
+require_once '../../core/healper/healper.php';
 
+session_start();
+if(isset($_SESSION["name"])){
+    redirect('app/views/dashboard/dashboard.php');
+}
 ?>
-
-<!DOCTYPE html>
 <html lang="fa">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ورود/ثبت نام</title>
-  <link rel="stylesheet" href="../assets/Login&SinUp/css/login-style.css">
+  <link rel="stylesheet" href="<?= asset('Login&SinUp/css/login-style.css')?>">
   <!-- کتابخانه SweetAlert را در فایل HTML خود اضافه کنید -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -73,34 +76,56 @@
 </div>
 
 <script>
-  document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const formData = new FormData(this);
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
 
-    fetch('../../../app/controllers/user/LoginUser.php', {
-      method: 'POST',
-      body: formData
-    })
-            .then(response => response.json())
+        fetch('../../../app/controllers/user/LoginUser.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.text())
             .then(data => {
-              Swal.fire({
-                title: data.success ? 'موفقیت' : 'خطا',
-                text: data.message,
-                icon: data.success ? 'success' : 'error',
-                confirmButtonText: 'باشه'
-              });
+                console.log('Response text:', data);
+                try {
+                    const jsonData = JSON.parse(data);
+                    console.log('Parsed JSON:', jsonData);
+                    Swal.fire({
+                        title: jsonData.success ? 'موفقیت' : 'خطا',
+                        text: jsonData.message,
+                        icon: jsonData.success ? 'success' : 'error',
+                        confirmButtonText: 'باشه'
+                    }).then(() => {
+                        if (jsonData.success && jsonData.redirect) {
+                            window.location.href = jsonData.redirect;
+                        }
+                    });
+                } catch (error) {
+                    console.error('Error parsing JSON:', error);
+                    Swal.fire({
+                        title: 'خطا',
+                        text: 'پاسخ سرور معتبر نیست',
+                        icon: 'error',
+                        confirmButtonText: 'باشه'
+                    });
+                }
             })
             .catch(error => {
-              Swal.fire({
-                title: 'خطا',
-                text: 'مشکلی در ارتباط با سرور به وجود آمده است',
-                icon: 'error',
-                confirmButtonText: 'باشه'
-              });
+                console.error('Error:', error);
+                Swal.fire({
+                    title: 'خطا',
+                    text: 'مشکلی در ارتباط با سرور به وجود آمده است',
+                    icon: 'error',
+                    confirmButtonText: 'باشه'
+                });
             });
-  });
+    });
 
-  document.getElementById('registerForm').addEventListener('submit', function(event) {
+
+
+
+
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
     event.preventDefault();
     const formData = new FormData(this);
 

@@ -16,37 +16,36 @@ $(document).ready(function () {
     options: {
       responsive: false,
       scales: {
-        xAxes: [{
-          distribution: 'linear'
-        }]
+        x: {
+          type: 'linear',
+          position: 'bottom'
+        }
       }
     }
   });
 
   function updateChart() {
     $.ajax({
-      url: 'https://danatm.ir/app/controllers/watering/GetDatalast15days.php', // مسیر صحیح به فایل PHP
+      url: 'https://danatm.ir/app/controllers/watering/GetDatalast14days.php',
       method: 'GET',
       success: function (response) {
-        console.log("Data received from PHP: ", response); // چاپ داده‌ها در کنسول
 
-        // بررسی اینکه آیا داده‌ها و برچسب‌ها مقداردهی شده‌اند
         if (response.labels && response.labels.length > 0 && response.data && response.data.length > 0) {
-          // به‌روزرسانی داده‌های نمودار
+
           myChart.data.labels = response.labels;
           myChart.data.datasets[0].data = response.data;
-          myChart.update(); // به‌روزرسانی نمودار
+          myChart.update();
         } else {
           console.error("Received data is empty or invalid");
         }
       },
-      error: function(jqXHR, textStatus, errorThrown) {
+      error: function (jqXHR, textStatus, errorThrown) {
         console.error("AJAX Error: ", textStatus, errorThrown);
       }
     });
   }
 
-  // اولین درخواست برای بارگذاری اولیه داده‌ها
+
   updateChart();
 
   var updateInterval;
@@ -55,20 +54,106 @@ $(document).ready(function () {
     updateInterval = setInterval(updateChart, 15000);
   }
 
-  function stopInterval() {
-    clearInterval(updateInterval);
-  }
-
-  // بررسی وضعیت نمایش صفحه با استفاده از Page Visibility API
-  document.addEventListener('visibilitychange', function() {
-    if (document.hidden) {
-      stopInterval();
-    } else {
-      startInterval();
-      updateChart(); // به‌روزرسانی فوری پس از بازگشت به صفحه
-    }
-  });
-
-  // شروع interval به محض بارگذاری صفحه
   startInterval();
 });
+
+  $(document).ready(function () {
+    const url = 'https://danatm.ir/app/controllers/rain/select.php';
+    const itemsPerPage = 10;
+    let currentPage = 0;
+    let totalItems = 0;
+
+    function renderTable(data) {
+      const tableHtml = `
+      <div class="table-box">
+        <table>
+          <tr class="t-header">
+            <th>وضعیت</th>
+            <th>زمان</th>
+            <th>تاریخ</th>
+            <th>روز هفته</th>
+          </tr>
+          ${data.map(item => `
+            <tr class="t-item">
+              <td>${item.status}</td>
+              <td>${item.time}</td>
+              <td>${item.date}</td>
+              <td>${item.weekday}</td>
+            </tr>
+          `).join('')}
+        </table>
+      </div>
+    `;
+
+      $('#tables').html(tableHtml);
+    }
+
+    function renderPagination(totalItems, currentPage) {
+      const pageCount = Math.ceil(totalItems / itemsPerPage);
+      let paginationHtml = '';
+
+      if (currentPage > 0) {
+        paginationHtml += `<button class="page-btn prev-btn" data-page="${currentPage - 1}">قبلی</button>`;
+      }
+
+      let startPage = Math.max(0, currentPage - 2);
+      let endPage = Math.min(pageCount - 1, currentPage + 2);
+
+      if (startPage > 0) {
+        paginationHtml += `<button class="page-btn" data-page="0">1</button>`;
+        if (startPage > 1) {
+          paginationHtml += `<span>...</span>`;
+        }
+      }
+
+      for (let i = startPage; i <= endPage; i++) {
+        paginationHtml += `<button class="page-btn ${i === currentPage ? 'active' : ''}" data-page="${i}">${i + 1}</button>`;
+      }
+
+      if (endPage < pageCount - 1) {
+        if (endPage < pageCount - 2) {
+          paginationHtml += `<span>...</span>`;
+        }
+        paginationHtml += `<button class="page-btn" data-page="${pageCount - 1}">${pageCount}</button>`;
+      }
+
+      if (currentPage < pageCount - 1) {
+        paginationHtml += `<button class="page-btn next-btn" data-page="${currentPage + 1}">بعدی</button>`;
+      }
+
+      $('#pagination-container').html(paginationHtml);
+    }
+
+    $(document).on('click', '.page-btn', function () {
+      const page = $(this).data('page');
+      currentPage = page;
+      fetchData(page);
+    });
+
+    function fetchData(page) {
+      $.ajax({
+        url: `${url}?page=${page}&limit=${itemsPerPage}`,
+        method: 'GET',
+        success: function (response) {
+          console.log('Response from server:', response.totalItems);
+          if (response && response.data) {
+            const data = response.data;
+            renderTable(data);
+            if (page === 0) {
+              totalItems = response.totalItems;
+            }
+            renderPagination(totalItems, currentPage);
+          } else {
+            console.error('Unexpected response format:', response);
+          }
+        },
+        error: function (error) {
+          console.error('Error fetching data', error);
+          console.error('Full error details:', error.responseText);
+        }
+      });
+    }
+
+    fetchData(0);
+  });
+

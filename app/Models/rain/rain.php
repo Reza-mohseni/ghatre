@@ -3,30 +3,32 @@
 namespace App\Models\rain;
 
 require_once '../../Models/ORM/BaseModel.php';
+require_once '../../Models/weather_conditions/select.php';
+require_once '../../Models/weather_conditions/Update.php';
 use App\Models\ORM\BaseModel;
+use App\Models\weather_conditions\Update;
+
 class rain extends BaseModel
 {
     protected $table='rain';
     public function insertrains($status){
-        // تبدیل تاریخ‌ها به تایم‌استمپ
-        $startDate = "2024-06-04 00:00:00";
-        $endDate = "2024-7-4 23:59:59";
-        $startTimestamp = strtotime($startDate);
-        $endTimestamp = strtotime($endDate);
-
-        // تولید یک عدد تصادفی بین تایم‌استمپ شروع و پایان
-        $randomTimestamp = rand($startTimestamp, $endTimestamp);
-
-        // تبدیل تایم‌استمپ تصادفی به یک تاریخ
-        $randomDate = date("Y-m-d H:i:s", $randomTimestamp);
-
-
-
         $insertrain=[
             'status'=>$status,
-            'created_at'=>$randomDate
+            'created_at'=>date("Y-m-d H:i:s")
         ];
         $this->save($insertrain);
+        $selectrain=$this->all();
+        $selectrain=end($selectrain);
+        $selectweath=new \App\Models\weather_conditions\select;
+        $selectweath=$selectweath->selects();
+       $selectweath=end($selectweath);
+        $updateweath=new Update();
+        $data=[
+            'rain_id'=>$selectrain['id'],
+        ];
+        $updateweath->updateweather($selectweath['id'],$data);
+
+
     }
 
 }

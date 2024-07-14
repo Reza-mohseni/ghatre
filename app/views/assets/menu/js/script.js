@@ -5,7 +5,7 @@ let menuBtnIcon = document.querySelector(".icon-menu i")
 
 menuBtn.addEventListener("click", function () {
   if (menuBtnIcon.classList.contains("bi-list")) {
-    menu.style.right = "0"
+    menu.style.right = "-5px"
     menuBtnIcon.classList = "bi bi-x"
   } else {
     menu.style.right = "-210px"
